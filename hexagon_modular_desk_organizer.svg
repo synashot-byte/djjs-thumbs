@@ -1,0 +1,109 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00050f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#001020;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="hexGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f5ff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#0088ff;stop-opacity:0.7" />
+    </linearGradient>
+    
+    <linearGradient id="hexGrad2" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00aacc;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#00f5ff;stop-opacity:0.6" />
+    </linearGradient>
+    
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffed4e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffaa00;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bgGrad)"/>
+  
+  <!-- Decorative Grid Lines -->
+  <line x1="0" y1="100" x2="400" y2="100" stroke="#00f5ff" stroke-width="0.5" opacity="0.1"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="#00f5ff" stroke-width="0.5" opacity="0.1"/>
+  <line x1="0" y1="300" x2="400" y2="300" stroke="#00f5ff" stroke-width="0.5" opacity="0.1"/>
+  <line x1="100" y1="0" x2="100" y2="400" stroke="#00f5ff" stroke-width="0.5" opacity="0.1"/>
+  <line x1="200" y1="0" x2="200" y2="400" stroke="#00f5ff" stroke-width="0.5" opacity="0.1"/>
+  <line x1="300" y1="0" x2="300" y2="400" stroke="#00f5ff" stroke-width="0.5" opacity="0.1"/>
+  
+  <!-- 3D Hexagon Organizer Structure -->
+  <g transform="translate(200, 160)">
+    <!-- Back Hexagons (smaller, faded) -->
+    <g opacity="0.4">
+      <polygon points="30,0 60,17.32 60,51.96 30,69.28 0,51.96 0,17.32" 
+               fill="none" stroke="#00f5ff" stroke-width="1.5" 
+               transform="translate(-70, -20)"/>
+      <polygon points="30,0 60,17.32 60,51.96 30,69.28 0,51.96 0,17.32" 
+               fill="none" stroke="#00f5ff" stroke-width="1.5" 
+               transform="translate(10, -20)"/>
+    </g>
+    
+    <!-- Middle Hexagons -->
+    <g opacity="0.7" filter="url(#softGlow)">
+      <polygon points="35,0 70,20.21 70,60.62 35,80.83 0,60.62 0,20.21" 
+               fill="url(#hexGrad2)" stroke="#00f5ff" stroke-width="2" 
+               transform="translate(-90, 10)"/>
+      <polygon points="35,0 70,20.21 70,60.62 35,80.83 0,60.62 0,20.21" 
+               fill="url(#hexGrad1)" stroke="#00f5ff" stroke-width="2" 
+               transform="translate(-10, 10)"/>
+      <polygon points="35,0 70,20.21 70,60.62 35,80.83 0,60.62 0,20.21" 
+               fill="url(#hexGrad2)" stroke="#00f5ff" stroke-width="2" 
+               transform="translate(70, 10)"/>
+    </g>
+    
+    <!-- Front Large Hexagons -->
+    <g filter="url(#glow)">
+      <polygon points="40,0 80,23.09 80,69.28 40,92.38 0,69.28 0,23.09" 
+               fill="url(#hexGrad1)" stroke="#00f5ff" stroke-width="2.5" 
+               transform="translate(-60, 40)"/>
+      <polygon points="40,0 80,23.09 80,69.28 40,92.38 0,69.28 0,23.09" 
+               fill="url(#hexGrad2)" stroke="#00f5ff" stroke-width="2.5" 
+               transform="translate(30, 40)"/>
+    </g>
+    
+    <!-- Connecting Lines -->
+    <line x1="-50" y1="50" x2="-50" y2="90" stroke="#00f5ff" stroke-width="2" opacity="0.6"/>
+    <line x1="30" y1="50" x2="30" y2="90" stroke="#00f5ff" stroke-width="2" opacity="0.6"/>
+    <line x1="110" y1="50" x2="70" y2="70" stroke="#00f5ff" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Center Glow Point -->
+    <circle cx="0" cy="80" r="4" fill="#00f5ff" filter="url(#strongGlow)" opacity="0.8"/>
+  </g>
+  
+  <!-- Product Name -->
+  <text x="200" y="310" font-family="Orbitron, Arial, sans-serif" font-size="22" font-weight="700" 
+        fill="#00f5ff" text-anchor="middle" filter="url(#softGlow)">
+    HEXAGON MODULAR
+  </text>
+  <text x="200" y="335" font-family="Orbitron

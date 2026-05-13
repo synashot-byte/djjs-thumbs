@@ -1,0 +1,102 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+    </style>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00050f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000a1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00f5ff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00d4e6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f5ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffed4e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffa500;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bgGrad)"/>
+  
+  <!-- Decorative grid lines -->
+  <g opacity="0.1">
+    <line x1="0" y1="100" x2="400" y2="100" stroke="#00f5ff" stroke-width="1"/>
+    <line x1="0" y1="200" x2="400" y2="200" stroke="#00f5ff" stroke-width="1"/>
+    <line x1="0" y1="300" x2="400" y2="300" stroke="#00f5ff" stroke-width="1"/>
+    <line x1="100" y1="0" x2="100" y2="400" stroke="#00f5ff" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="400" stroke="#00f5ff" stroke-width="1"/>
+    <line x1="300" y1="0" x2="300" y2="400" stroke="#00f5ff" stroke-width="1"/>
+  </g>
+  
+  <!-- 3D Wave Hook Design -->
+  <g filter="url(#strongGlow)">
+    <!-- Back wave layer -->
+    <path d="M 120 160 Q 150 140, 180 150 Q 210 160, 240 145 Q 270 130, 300 140 L 300 180 Q 270 170, 240 185 Q 210 200, 180 190 Q 150 180, 120 200 Z" 
+          fill="url(#waveGrad)" opacity="0.3"/>
+    
+    <!-- Middle wave layer -->
+    <path d="M 110 170 Q 140 150, 170 160 Q 200 170, 230 155 Q 260 140, 290 150 L 290 200 Q 260 190, 230 205 Q 200 220, 170 210 Q 140 200, 110 220 Z" 
+          fill="url(#waveGrad)" opacity="0.6"/>
+    
+    <!-- Front wave layer (main) -->
+    <path d="M 100 180 Q 130 160, 160 170 Q 190 180, 220 165 Q 250 150, 280 160 L 280 220 Q 250 210, 220 225 Q 190 240, 160 230 Q 130 220, 100 240 Z" 
+          fill="url(#waveGrad)" opacity="1" filter="url(#glow)"/>
+    
+    <!-- Hook element -->
+    <path d="M 280 180 L 295 185 L 295 210 Q 295 230, 280 240 Q 265 250, 250 240" 
+          fill="none" stroke="url(#waveGrad)" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+    
+    <!-- Mounting point -->
+    <circle cx="140" cy="200" r="8" fill="#00f5ff" filter="url(#glow)"/>
+    <circle cx="140" cy="200" r="4" fill="#00050f"/>
+    
+    <!-- 3D depth lines -->
+    <line x1="100" y1="180" x2="100" y2="240" stroke="#00f5ff" stroke-width="3" opacity="0.8"/>
+    <line x1="280" y1="160" x2="280" y2="220" stroke="#00f5ff" stroke-width="3" opacity="0.8"/>
+  </g>
+  
+  <!-- Accent glow circles -->
+  <circle cx="80" cy="120" r="3" fill="#00f5ff" opacity="0.6" filter="url(#glow)"/>
+  <circle cx="320" cy="280" r="3" fill="#00f5ff" opacity="0.6" filter="url(#glow)"/>
+  <circle cx="350" cy="100" r="2" fill="#00f5ff" opacity="0.4"/>
+  
+  <!-- Product Name -->
+  <text x="200" y="310" font-family="Orbitron, sans-serif" font-size="22" font-weight="700" fill="#00f5ff" text-anchor="middle" filter="url(#glow)">
+    MODERN WAVE
+  </text>
+  <text x="200" y="335" font-family="Orbitron, sans-serif" font-size="18" font-weight="400" fill="#00f5ff" text-anchor="middle" opacity="0.8">
+    WALL HOOK
+  </text>
+  
+  <!-- Price Badge -->
+  <g transform="translate(310, 30)">
+    <circle cx="0" cy="0" r="35" fill="url(#goldGrad)" filter="url(#glow)"/>
+    <circle cx="0" cy="0" r="32" fill="#00050f" opacity="0.3"/>
+    <text x="0" y="-5" font-family="Orbitron, sans-serif" font-size="18" font-weight="900" fill="url(#goldGrad)" text-anchor="middle">
+      $2.99
+    </text>
+    <text x="0" y="10" font-family="Orbitron, sans-serif" font-size="9" font-weight="400" fill="#ffd700" text-anchor="middle" opacity="0.8">
+      STL
+    </text>
+  </g>
+  
+  <!-- Bottom branding bar -->
+  <rect x="0" y="360" width="400" height
